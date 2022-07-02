@@ -1,4 +1,4 @@
-# Teamfight Tactics Composition Builder (Basic) by Kobe Zheng 
+# TFT Composition Builder (Basic) by Kobe Zheng 
 Built in Python <br/>
 This is a console-based application that allows users to plan team compositions for Riot Games' Teamfight Tactics. <br/>
 This program currently supports Set 7 Dragonlands<br/>
