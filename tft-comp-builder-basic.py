@@ -43,13 +43,10 @@ class Trait:
         self.description = trait_data['description']
         self.active_count = trait_pair[1]
         self.max_count = trait_data['sets'][len(trait_data['sets']) - 1]['min']
-        print("length" +self.name +  str(len(trait_data['sets'])) + "max" + str(self.max_count))
         self.style = get_trait_style(self.active_count, trait_data)
 
 # given a number and trait json data, returns the style level: bronze, silver, gold, chromatic 
 def get_trait_style(active_count, trait_data):
-    for item in trait_data['sets']:
-        print(item)
     set_data = trait_data['sets']
     for set in reversed(set_data):
         if set['min'] <= active_count:
@@ -191,7 +188,6 @@ def print_instructions():
 # processes the given input, returns true if program is not quit and false if the program is quit 
 def manage_command(input):
     global team_composition
-    print("INPUT: " + input)
     if (input == "1" or input == "view champions"):
         print("List of Champions:")
         print(display_all_champs_in_set())
@@ -203,7 +199,6 @@ def manage_command(input):
         print(display_team_traits())
         return True 
     elif ("add" in input):
-        print("adding")
         champ_request = input.replace("add ", "")
         champ_data = get_champ_data(champ_request)
         if champ_data != False: 
@@ -235,7 +230,7 @@ def main():
     print("User Input:", end = ' ')
     command = input()
     while manage_command(command) == True:
-        print(print_instructions())
+        # print(print_instructions())
         print("User Input:", end = ' ')
         command = input()
     
